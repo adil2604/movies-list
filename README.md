@@ -11,11 +11,11 @@ Simple website for creating Movies list of movies.
 ## Prepare project
 
 1. Install [rails](https://rubyonrails.org/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-2. run `rails db:setup && rails db:migrate`
-3. run `npm install` or `yarn install`
+2. change dir to `api` then run `rails db:setup && rails db:migrate`
+3. change dir to `front` then run `npm install` or `yarn install`
 
 ## Run project locally
 
-1. run `rails s`
-2. run in another terminal `cd movies_front/` && `npm run start`
+1. change dir to `api`, run `rails s`
+2. change dir to `front`, run in another terminal `cd movies_front/` && `npm run start`
 3. navigate to `http://localhost:3006`

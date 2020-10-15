@@ -28,9 +28,11 @@ export default function MainPage() {
   const [movieShow, setMovieShow] = useState(false);
   const handleMovieClose = () => setMovieShow(false);
   const handleMovieShow = () => setMovieShow(true);
+
   useEffect(() => {
     fetchMoviesList();
   }, []);
+
   const fetchMoviesList = (index) => {
     getMoviesList().then((res) => {
       setMoviesList(res.data);
@@ -41,17 +43,20 @@ export default function MainPage() {
       }
     });
   };
+
   const handleDestroyMoviesList = (id) => {
     destroyMoviesList({ id: id }).then(() => {
       fetchMoviesList();
     });
   };
+
   const handleDestroyMovie = (id) => {
     console.log(selectedIndex);
     destroyMovie({ id: id }).then(() => {
       fetchMoviesList(selectedIndex);
     });
   };
+
   const handleListSubmit = (e) => {
     e.preventDefault();
     addMoviesList({ name: listName }).then(() => {
@@ -59,6 +64,7 @@ export default function MainPage() {
       fetchMoviesList();
     });
   };
+
   const handleMovieSubmit = (e) => {
     e.preventDefault();
     addMovieToList({ name: movieName, movies_list_id: selectedMovies.id }).then(
@@ -68,10 +74,12 @@ export default function MainPage() {
       }
     );
   };
+
   const handleListClick = (data, index) => {
     setSelectedIndex(index);
     setMovies(data);
   };
+
   return (
     <Container fluid>
       <Row>
@@ -88,7 +96,7 @@ export default function MainPage() {
                 action
                 className="d-flex justify-content-between"
                 onClick={() => handleListClick(list, index)}
-                active={list.id == selectedMovies?.id}
+                active={list.id === selectedMovies?.id}
               >
                 {list.name}
                 <Button

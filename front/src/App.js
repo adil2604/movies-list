@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
-import MainPage from "pages/Main";
+import MainPage from "./pages/Main";
 function App() {
   return (
     <div className="App">
